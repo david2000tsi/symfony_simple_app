@@ -2,6 +2,10 @@
 
 {% block title %}Contato{% endblock %}
 
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/show.css') }}">
+{% endblock %}
+
 {% block body %}
     <h1>Contato</h1>
 
@@ -21,10 +25,8 @@
             </tr>
         </tbody>
     </table>
-
-    <a href="{{ path('contato_index') }}">back to list</a>
-
-    <a href="{{ path('contato_edit', {'id': contato.id}) }}">edit</a>
-
-    {{ include('contato/_delete_form.html.twig') }}
+    <br>
+    <div class="dv_button_back">
+        <a href="{{ path('contato_index') }}"><button class="button_back">Voltar para listagem</button></a>
+    </div>
 {% endblock %}

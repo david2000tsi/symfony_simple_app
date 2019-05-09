@@ -1,11 +1,13 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}New Contato{% endblock %}
+{% block title %}Novo Contato{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/forms.css') }}">
+{% endblock %}
 
 {% block body %}
-    <h1>Create new Contato</h1>
+    <h1>Novo Contato</h1>
 
     {{ include('contato/_form.html.twig') }}
-
-    <a href="{{ path('contato_index') }}">back to list</a>
 {% endblock %}
