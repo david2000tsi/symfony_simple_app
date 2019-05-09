@@ -17,12 +17,12 @@ class Contato
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=100)
+     * @ORM\Column(type="string", length=25)
      */
     private $nome;
 
     /**
-     * @ORM\Column(type="bigint")
+     * @ORM\Column(type="string", length=15)
      */
     private $telefone;
 
@@ -43,12 +43,12 @@ class Contato
         return $this;
     }
 
-    public function getTelefone(): ?int
+    public function getTelefone(): ?string
     {
         return $this->telefone;
     }
 
-    public function setTelefone(int $telefone): self
+    public function setTelefone(string $telefone): self
     {
         $this->telefone = $telefone;
 
