@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Editar Endereço{% endblock %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/forms.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1>Editar Endereço</h1>
+
+    {{ include('endereco/_form.html.twig', {'method' : 'put', 'endereco' : endereco}) }}
+
+    <div class="dv_button_back">
+        <a href="{{ path('endereco_index') }}"><button class="button_back">Voltar para listagem</button></a>
+    </div>
+{% endblock %}
