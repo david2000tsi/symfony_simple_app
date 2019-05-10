@@ -1,0 +1,22 @@
+{{ form_start(form) }}
+    <div class="form_error">
+        <strong>{{ form_errors(form) }}</strong>
+    </div>
+
+    <div class="form_fields">
+        <div class="col">
+            {{ form_row(form.nome) }}
+        </div>
+        <div class="col">
+            {{ form_row(form.telefone) }}
+        </div>
+        <br>
+        <div class="div_button_submit">
+        	<button type="submit" class="btn button_submit">{{ button_label|default('Salvar') }}</button>	
+        </div>
+    </div>
+{{ form_end(form) }}
+
+<div class="dv_button_back">
+	<a href="{{ path('contato_index') }}"><button class="button_back">Voltar para listagem</button></a>
+</div>

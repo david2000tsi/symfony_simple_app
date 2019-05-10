@@ -1,0 +1,84 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contato{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        button {
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100px;
+        }
+        .dv_bnt_novo {
+            width: 40%;
+            height: 60px;
+            margin: 0 auto;
+        }
+        .bnt_novo {
+            background-color: green;
+            float: right;
+            width: 150px;
+        }
+        .bnt_home {
+            background-color: green;
+            float: left;
+            width: 150px;
+        }
+        .btn_show {
+            background-color: #496f99;
+            float: left;
+        }
+        .btn_edit {
+            background-color: blue;
+            float: center;
+        }
+        .btn_del {
+            background-color: red;
+            float: right;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1>Listagem de Contatos</h1>
+
+    <div class="dv_bnt_novo">
+        <a href="{{ path('index') }}"><button class="bnt_home">Ir para Home</button></a>
+        <a href="{{ path('contato_new') }}"><button class="bnt_novo">Novo Contato</button></a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for contato in contatos %}
+            <tr>
+                <td>{{ contato.id }}</td>
+                <td>{{ contato.nome }}</td>
+                <td>{{ contato.telefone }}</td>
+                <td class="td_action">
+                    <a href="{{ path('contato_show', {'id': contato.id}) }}"><button class="btn_show">Mostrar</button></a>
+                    <a href="{{ path('contato_edit', {'id': contato.id}) }}"><button class="btn_edit">Editar</button></a>
+                    <a href="" onclick="event.preventDefault(); document.getElementById('form-{{contato.id}}').submit();"><button class="btn_del">Deletar</button></a>
+                    <form id="form-{{contato.id}}" method="post" action="{{ path('contato_delete', {'id': contato.id}) }}">
+                        <input type="hidden" name="_method" value="delete">
+                        <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ contato.id) }}">
+                    </form>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Nenhum registro encontrado.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

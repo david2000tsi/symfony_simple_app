@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block stylesheets %}
+    <style>
+        .dv_bnt_option {
+            width: 800px;
+            height: 200px;
+            margin: 0 auto;
+        }
+        button {
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 300px;
+            height: 150px;
+            background-color: blue;
+            font-size: 26px;
+        }
+        .btn_contato {
+            float: left;
+        }
+        .btn_endereco {
+            float: right;
+        }
+    </style>
+{% endblock %}
+
+{% block body %}
+    <h1>Selecione um link abaixo:</h1>
+
+    <div class="dv_bnt_option">
+        <a href="{{ path('contato_index') }}"><button class="btn_contato">Página de Contatos</button></a>
+
+        <a href="{{ path('endereco_index') }}"><button class="btn_endereco">Página de Endereços</button></a>
+    </div>
+    <br>
+{% endblock %}

@@ -1,3 +1,34 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+
+index:
+    path: /
+    controller: App\Controller\HomeController::index
+    methods: get
+
+endereco_index:
+    path: /endereco
+    controller: App\Controller\EnderecoController::index
+    methods: get
+endereco_new:
+    path: /endereco/new
+    controller: App\Controller\EnderecoController::new
+    methods: get
+endereco_store:
+    path: /endereco/store
+    controller: App\Controller\EnderecoController::store
+    methods: post|put
+
+endereco_show:
+    path: /endereco/show/{id}
+    controller: App\Controller\EnderecoController::show
+    methods: get
+endereco_edit:
+    path: /endereco/edit/{id}
+    controller: App\Controller\EnderecoController::edit
+    methods: get|put
+endereco_delete:
+    path: /endereco/delete
+    controller: App\Controller\EnderecoController::delete
+    methods: delete

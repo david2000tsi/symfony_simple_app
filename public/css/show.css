@@ -1,0 +1,17 @@
+.content {
+    height: 300px;
+}
+.form_fields {
+    width: 40%;
+    height: 100%;
+    margin: 0 auto;
+}
+.dv_button_back {
+    width: 15%;
+    margin: 0 auto;
+}
+.button_back {
+    background-color: blue;
+    float: center;
+    width: 200px;
+}

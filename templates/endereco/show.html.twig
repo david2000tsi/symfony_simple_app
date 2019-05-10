@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contato{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/show.css') }}">
+{% endblock %}
+
+{% block body %}
+    <h1>Contato</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ endereco.id }}</td>
+            </tr>
+            <tr>
+                <th>Quadra</th>
+                <td>{{ endereco.quadra }}</td>
+            </tr>
+            <tr>
+                <th>Número</th>
+                <td>{{ endereco.numero }}</td>
+            </tr>
+            <tr>
+                <th>Observação</th>
+                <td>{{ endereco.observacao }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <div class="dv_button_back">
+        <a href="{{ path('contato_index') }}"><button class="button_back">Voltar para listagem</button></a>
+    </div>
+{% endblock %}
